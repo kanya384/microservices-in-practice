@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+    active:
+      - vault
+  cloud:
+    vault:
+      scheme: http
+      kv:
+        enabled: true
+    config:
+      server:
+        vault:
+          port: 8200
+          host: localhost
+          kvVersion: 2
+
+server:
+  port: 8071
